@@ -1,4 +1,4 @@
-// Inser a single doument in to db
+// Inser a single doument into db
 const insertOnedocument = async (collection) => {
   try {
     // document
@@ -18,6 +18,7 @@ const insertOnedocument = async (collection) => {
   }
 };
 
+// Inserting many document into db
 const InsertManyDocument = async (collection) => {
   try {
     // document
@@ -49,6 +50,7 @@ const InsertManyDocument = async (collection) => {
   }
 };
 
+// Finding one document from collection
 const findOnedocument = async (collection) => {
   try {
     const result = await collection.findOne({
@@ -61,6 +63,7 @@ const findOnedocument = async (collection) => {
   }
 };
 
+// Finding  all documents from collection
 const findAllDocument = async (collection) => {
   try {
     const result = await collection.find({}).toArray();
@@ -70,6 +73,7 @@ const findAllDocument = async (collection) => {
   }
 };
 
+// Update one document fro  collection
 const updateOneDocument = async (collection) => {
   try {
     const result = await collection.updateOne(
@@ -84,6 +88,7 @@ const updateOneDocument = async (collection) => {
   }
 };
 
+// update many document from collection
 const updateManyDocument = async (collection) => {
   try {
     const result = await collection.updateMany(
@@ -98,6 +103,7 @@ const updateManyDocument = async (collection) => {
   }
 };
 
+// delete oen document from collection
 const deleteOneDocument = async (collection) => {
   try {
     const result = await collection.deleteOne({ age: 24 });
@@ -108,6 +114,7 @@ const deleteOneDocument = async (collection) => {
   }
 };
 
+// deleting many documents from collection
 const deleteManydocument = async (collection) => {
   try {
     const result = await collection.deleteMany({ hobbies: 'soccer' });
