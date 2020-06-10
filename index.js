@@ -22,6 +22,8 @@ const {
   notOperator,
   norOperator,
   orOperator,
+  existOperator,
+  typeOperator,
 } = require(
   "./read.operations",
 );
@@ -41,7 +43,7 @@ const connectToDatabase = async () => {
     const collection = db.collection("user");
 
     // invoking the function
-    orOperator(collection);
+    typeOperator(collection);
 
     client.close();
   } catch (error) {

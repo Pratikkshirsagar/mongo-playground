@@ -125,6 +125,32 @@ const orOperator = async (collection) => {
   }
 };
 
+// ELEMENT OPERATORS
+
+// $exists $type
+
+const existOperator = async (collection) => {
+  try {
+    const result = await collection.find(
+      { hobbies: { $exists: true, $eq: null } },
+    ).toArray();
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const typeOperator = async (collection) => {
+  try {
+    const result = await collection.find(
+      { hobbies: { $type: "null" } },
+    ).toArray();
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 module.exports = {
   equalTo,
   greaterThan,
@@ -138,4 +164,6 @@ module.exports = {
   notOperator,
   norOperator,
   orOperator,
+  existOperator,
+  typeOperator,
 };
