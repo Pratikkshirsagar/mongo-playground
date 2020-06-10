@@ -18,6 +18,10 @@ const {
   lessThanEqualTo,
   notEqual,
   notInOperation,
+  andOperator,
+  notOperator,
+  norOperator,
+  orOperator,
 } = require(
   "./read.operations",
 );
@@ -37,7 +41,7 @@ const connectToDatabase = async () => {
     const collection = db.collection("user");
 
     // invoking the function
-    notInOperation(collection);
+    orOperator(collection);
 
     client.close();
   } catch (error) {
