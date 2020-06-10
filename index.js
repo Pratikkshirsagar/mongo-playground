@@ -24,6 +24,10 @@ const {
   orOperator,
   existOperator,
   typeOperator,
+  regexOperator,
+  sizeOperator,
+  allOperator,
+  elemMatchOperator,
 } = require(
   "./read.operations",
 );
@@ -43,7 +47,7 @@ const connectToDatabase = async () => {
     const collection = db.collection("user");
 
     // invoking the function
-    typeOperator(collection);
+    elemMatchOperator(collection);
 
     client.close();
   } catch (error) {

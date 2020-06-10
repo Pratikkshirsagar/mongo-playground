@@ -3,12 +3,16 @@ const insertOnedocument = async (collection) => {
   try {
     // document
     const doc = {
-        name: "Akash Gangawane",
+        name: "Amit Saha",
         age: 23,
-        hobbies: ["football"],
+        hobbies: [
+          { title: "football", frequency: 3 },
+          { title: "cricket", frequency: 2 },
+        ],
         education: "Graduate",
         pointer: 6.7,
-        living: "Ghansoli",
+        living: "Thane",
+        summery: "I love to Read and write",
       },
       // method to insert a doc
       result = await collection.insertOne(doc);
