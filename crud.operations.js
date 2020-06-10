@@ -3,9 +3,9 @@ const insertOnedocument = async (collection) => {
   try {
     // document
     const doc = {
-      name: 'Akash Gangawane',
+      name: "Akash Gangawane",
       age: 25,
-      hobbies: ['football'],
+      hobbies: ["football"],
     };
 
     // method to insert a doc
@@ -24,19 +24,52 @@ const InsertManyDocument = async (collection) => {
     // document
     const doc = [
       {
-        name: 'Akash Gangawane',
-        age: 22,
-        hobbies: ['football'],
-      },
-      {
-        name: 'Akshay Madrikar',
+        name: "Akash Gangawane",
         age: 23,
-        hobbies: ['video games', 'coding'],
+        hobbies: ["football"],
+        education: "Graduate",
+        pointer: 6.7,
+        living: "Ghansoli",
       },
       {
-        name: 'Ankita Sharma',
+        name: "Akshay Madrikar",
+        age: 22,
+        hobbies: ["video games", "coding"],
+        education: "Post Graduate",
+        pointer: 7.5,
+        living: "Airoli",
+      },
+      {
+        name: "Pratik Kshirsagar",
         age: 24,
-        hobbies: ['painting', 'cooking'],
+        hobbies: ["football", "coding"],
+        education: "Post Graduate",
+        pointer: 8.0,
+        living: "Vashi",
+      },
+      {
+        name: "Nikita Kshirsagar",
+        age: 21,
+        hobbies: ["painting", "cooking"],
+        education: "Graduate",
+        pointer: 6.2,
+        living: "Airoli",
+      },
+      {
+        name: "Ravi Paul",
+        age: 26,
+        hobbies: ["Bike riding", "coding"],
+        education: "Graduate",
+        pointer: 7,
+        living: "Nerul",
+      },
+      {
+        name: "Ronit Pawar",
+        age: 24,
+        hobbies: ["Photoshop"],
+        education: "Graduate",
+        pointer: 6.8,
+        living: "Palava",
       },
     ];
 
@@ -54,7 +87,7 @@ const InsertManyDocument = async (collection) => {
 const findOnedocument = async (collection) => {
   try {
     const result = await collection.findOne({
-      name: 'Akash Gangawane',
+      name: "Akash Gangawane",
       age: 25,
     });
     console.log(result);
@@ -73,12 +106,12 @@ const findAllDocument = async (collection) => {
   }
 };
 
-// Update one document fro  collection
+// Update one document from  collection
 const updateOneDocument = async (collection) => {
   try {
     const result = await collection.updateOne(
       { age: 25 },
-      { $set: { name: 'Yash chauhan' } }
+      { $set: { name: "Yash chauhan" } },
     );
 
     //log the result
@@ -92,8 +125,8 @@ const updateOneDocument = async (collection) => {
 const updateManyDocument = async (collection) => {
   try {
     const result = await collection.updateMany(
-      { hobbies: 'soccer' },
-      { $set: { hobbies: ['soccer'] } }
+      { hobbies: "soccer" },
+      { $set: { hobbies: ["soccer"] } },
     );
 
     // log the result
@@ -117,7 +150,7 @@ const deleteOneDocument = async (collection) => {
 // deleting many documents from collection
 const deleteManydocument = async (collection) => {
   try {
-    const result = await collection.deleteMany({ hobbies: 'soccer' });
+    const result = await collection.deleteMany({ hobbies: "soccer" });
 
     // log the result
     console.log(result);
