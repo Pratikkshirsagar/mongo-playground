@@ -3,16 +3,16 @@ const insertOnedocument = async (collection) => {
   try {
     // document
     const doc = {
-        name: "Amit Saha",
+        name: 'Amit Saha',
         age: 23,
         hobbies: [
-          { title: "football", frequency: 3 },
-          { title: "cricket", frequency: 2 },
+          { title: 'football', frequency: 3 },
+          { title: 'cricket', frequency: 2 },
         ],
-        education: "Graduate",
+        education: 'Graduate',
         pointer: 6.7,
-        living: "Thane",
-        summery: "I love to Read and write",
+        living: 'Thane',
+        summery: 'I love to Read and write',
       },
       // method to insert a doc
       result = await collection.insertOne(doc);
@@ -30,52 +30,52 @@ const InsertManyDocument = async (collection) => {
     // document
     const doc = [
       {
-        name: "Akash Gangawane",
+        name: 'Akash Gangawane',
         age: 23,
-        hobbies: ["football"],
-        education: "Graduate",
+        hobbies: ['football'],
+        education: 'Graduate',
         pointer: 6.7,
-        living: "Ghansoli",
+        living: 'Ghansoli',
       },
       {
-        name: "Akshay Madrikar",
+        name: 'Akshay Madrikar',
         age: 22,
-        hobbies: ["video games", "coding"],
-        education: "Post Graduate",
+        hobbies: ['video games', 'coding'],
+        education: 'Post Graduate',
         pointer: 7.5,
-        living: "Airoli",
+        living: 'Airoli',
       },
       {
-        name: "Pratik Kshirsagar",
+        name: 'Pratik Kshirsagar',
         age: 24,
-        hobbies: ["football", "coding"],
-        education: "Post Graduate",
+        hobbies: ['football', 'coding'],
+        education: 'Post Graduate',
         pointer: 8.0,
-        living: "Vashi",
+        living: 'Vashi',
       },
       {
-        name: "Nikita Kshirsagar",
+        name: 'Nikita Kshirsagar',
         age: 21,
-        hobbies: ["painting", "cooking"],
-        education: "Graduate",
+        hobbies: ['painting', 'cooking'],
+        education: 'Graduate',
         pointer: 6.2,
-        living: "Airoli",
+        living: 'Airoli',
       },
       {
-        name: "Ravi Paul",
+        name: 'Ravi Paul',
         age: 26,
-        hobbies: ["Bike riding", "coding"],
-        education: "Graduate",
+        hobbies: ['Bike riding', 'coding'],
+        education: 'Graduate',
         pointer: 7,
-        living: "Nerul",
+        living: 'Nerul',
       },
       {
-        name: "Ronit Pawar",
+        name: 'Ronit Pawar',
         age: 24,
-        hobbies: ["Photoshop"],
-        education: "Graduate",
+        hobbies: ['Photoshop'],
+        education: 'Graduate',
         pointer: 6.8,
-        living: "Palava",
+        living: 'Palava',
       },
     ];
 
@@ -93,8 +93,7 @@ const InsertManyDocument = async (collection) => {
 const findOnedocument = async (collection) => {
   try {
     const result = await collection.findOne({
-      name: "Akash Gangawane",
-      age: 25,
+      name: 'Amit Saha',
     });
     console.log(result);
   } catch (error) {
@@ -117,7 +116,7 @@ const updateOneDocument = async (collection) => {
   try {
     const result = await collection.updateOne(
       { age: 25 },
-      { $set: { name: "Yash chauhan" } },
+      { $set: { name: 'Yash chauhan' } }
     );
 
     //log the result
@@ -131,8 +130,8 @@ const updateOneDocument = async (collection) => {
 const updateManyDocument = async (collection) => {
   try {
     const result = await collection.updateMany(
-      { hobbies: "soccer" },
-      { $set: { hobbies: ["soccer"] } },
+      { hobbies: 'soccer' },
+      { $set: { hobbies: ['soccer'] } }
     );
 
     // log the result
@@ -156,7 +155,7 @@ const deleteOneDocument = async (collection) => {
 // deleting many documents from collection
 const deleteManydocument = async (collection) => {
   try {
-    const result = await collection.deleteMany({ hobbies: "soccer" });
+    const result = await collection.deleteMany({ hobbies: 'soccer' });
 
     // log the result
     console.log(result);

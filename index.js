@@ -7,7 +7,7 @@ const {
   updateManyDocument,
   deleteOneDocument,
   deleteManydocument,
-} = require("./crud.operations");
+} = require('./crud.operations');
 
 const {
   equalTo,
@@ -28,26 +28,36 @@ const {
   sizeOperator,
   allOperator,
   elemMatchOperator,
-} = require(
-  "./read.operations",
-);
+} = require('./read.operations');
 
-const MongoClient = require("mongodb").MongoClient;
+const {
+  updateOne,
+  updateMany,
+  incrementOperator,
+  decrementOperator,
+  unsetOperator,
+  renameOperator,
+  upsertdocument,
+  updateArrayDocument,
+  updateAllArrayDocument,
+} = require('./update.operations');
+
+const MongoClient = require('mongodb').MongoClient;
 
 // Conection URL
-const url = "mongodb://127.0.0.1:27017";
+const url = 'mongodb://127.0.0.1:27017';
 
 // Database Name
-const dbName = "testproject";
+const dbName = 'testproject';
 
 const connectToDatabase = async () => {
   try {
     const client = await MongoClient.connect(url, { useNewUrlParser: true });
     const db = client.db(dbName);
-    const collection = db.collection("user");
+    const collection = db.collection('user');
 
     // invoking the function
-    elemMatchOperator(collection);
+    findOnedocument(collection);
 
     client.close();
   } catch (error) {
